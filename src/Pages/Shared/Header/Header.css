@@ -1,0 +1,14 @@
+.menu-item a {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.menu-item .register,
+.menu-item .login {
+    background-color: #FFC10A;
+}
+
+.menu-item .register:hover,
+.menu-item .login:hover {
+    background-color: #ffa90ae5;
+}
