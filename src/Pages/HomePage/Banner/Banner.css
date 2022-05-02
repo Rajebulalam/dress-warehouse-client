@@ -1,0 +1,36 @@
+.slider {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.background {
+    background-color: #EAECED;
+}
+
+.size {
+    max-width: 1060px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.slider h2 {
+    font-size: 42px;
+    color: #181818;
+    font-weight: 900;
+}
+
+.slider p {
+    color: #000;
+}
+
+.slider button {
+    padding: 12px 32px;
+    background-color: #000;
+    border: none;
+    font-weight: 600;
+}
+
+.background .carousel-indicators [data-bs-target] {
+    background-color: #005;
+}
