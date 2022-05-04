@@ -2,6 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
 }
 
 .background {
@@ -10,8 +11,9 @@
 
 .size {
     max-width: 1060px;
-    width: 100%;
+    width: 96%;
     margin: 0 auto;
+    padding: 0 2%;
 }
 
 .slider h2 {
@@ -33,4 +35,36 @@
 
 .background .carousel-indicators [data-bs-target] {
     background-color: #005;
+}
+
+/* -------------------
+Responsive Banner Part
+--------------------*/
+@media only screen and (min-width: 200px) and (max-width: 767px) {
+
+    .slider .child-left {
+        z-index: 999;
+        text-align: center;
+        background-color: #fff;
+        opacity: 0.8;
+        height: 400px;
+        margin: 20px;
+        display: flex;
+        align-items: center;
+        padding: 0 5px;
+    }
+
+    .slider .child-right {
+        position: absolute;
+        z-index: 99;
+    }
+
+}
+
+@media only screen and (min-width: 200px) and (max-width: 480px) {
+
+    .slider .child-left {
+        height: 350px;
+    }
+
 }

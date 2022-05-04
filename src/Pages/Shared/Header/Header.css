@@ -22,7 +22,7 @@
 /* -----------------
 Responsive Header
 ------------------*/
-@media only screen and (min-width: 200px) and (max-width: 767px) {
+@media only screen and (min-width: 200px) and (max-width: 991px) {
 	
 	.menu-item a.register{
         margin: 20px 0;
