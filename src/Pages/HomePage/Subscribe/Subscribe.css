@@ -1,0 +1,22 @@
+.subscribe {
+    max-width: 700px;
+    width: 100%;
+    background-color: #EAEFF2;
+    margin: 0 auto;
+}
+
+.subscribe h2 {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.subscribe button {
+    background-color: #000;
+    font-weight: 600;
+    font-size: 15px;
+    color: #fff;
+}
+
+.subscribe button:hover {
+    background-color: #005;
+    color: #fff;
+}
