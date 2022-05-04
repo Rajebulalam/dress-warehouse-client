@@ -1,0 +1,21 @@
+.style{
+    background-color: #E0F4FF;
+}
+.stylish{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+}
+.details{
+    display: flex;
+    align-items: center;
+
+}
+.details button{
+    background-color: black;
+    color: #FFF;
+}
+.details button:hover{
+    background-color: #005;
+    color: #FFF;
+}

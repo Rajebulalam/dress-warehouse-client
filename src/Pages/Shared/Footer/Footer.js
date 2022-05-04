@@ -2,8 +2,6 @@ import React from 'react';
 import './Footer.css';
 import { Container } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faFacebookF } from '@fortawesome/free-solid-svg-icons';
-// import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import { faTwitter, faLinkedin, faGithub, faFacebook } from '@fortawesome/fontawesome-free-brands';
 
 const Footer = () => {

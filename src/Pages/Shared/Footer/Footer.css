@@ -3,6 +3,9 @@
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 40px;
 }
+.footer p{
+    color: #aaa;
+}
 .footer p a{
     font-size: 14px;
     color: #aaa;
@@ -22,6 +25,11 @@
     margin-top: 10px;
     background-color: #fff;
     color: #000;
+    
+}
+.footer button:hover{
+    background-color: #e89c0d;
+    color: #fff;
     
 }
 .social-icon{
