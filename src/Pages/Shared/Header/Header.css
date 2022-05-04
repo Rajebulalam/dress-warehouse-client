@@ -1,7 +1,12 @@
 .menu-item a {
     font-size: 20px;
 }
-
+.menu-item a.register{
+    margin: 0 10px;
+}
+.login{
+    margin-left: 10px;
+}
 .menu-item .register,
 .menu-item .login {
     background-color: #FFC10A;
@@ -11,4 +16,18 @@
 .menu-item .register:hover,
 .menu-item .login:hover {
     background-color: #ffa90ae5;
+}
+
+
+/* -----------------
+Responsive Header
+------------------*/
+@media only screen and (min-width: 200px) and (max-width: 767px) {
+	
+	.menu-item a.register{
+        margin: 20px 0;
+    }
+    .login{
+        margin-left: 0;
+    }
 }

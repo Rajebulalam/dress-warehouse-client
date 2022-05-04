@@ -14,7 +14,7 @@ const Inventory = () => {
                 <div className='products'>
                     {
                         products.slice(0, 6).map(product =>
-                            <div className='product'>
+                            <div className='product' key={product.id}>
                                 <img src={product.img} alt="product-img" />
                                 <div className='px-3'>
                                     <h2> {product.name} </h2>
