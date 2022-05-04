@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "img": "https://i.ibb.co/h2t1fkr/isolated-opened-black-t-shirt-removebg-preview.png",
+        "name": "Black T-Shirt",
+        "description": "We use ring spun cotton for a softer feel and a higher stitch count for durability. Comes standard with a men's unisex fit, that's made to fit everyone.",
+        "price": 15.99,
+        "quantity": 45
+    },
+    {
+        "id": 2,
+        "img": "https://i.ibb.co/Rz7CNHb/isolated-opened-white-t-shirt-removebg-preview.png",
+        "name": "White T-Shirt",
+        "description": "We use ring spun cotton for a softer feel and a higher stitch count for durability. Comes standard with a men's unisex fit, that's made to fit everyone.",
+        "price": 15.99,
+        "quantity": 45
+    },
+    {
+        "id": 3,
+        "img": "https://i.ibb.co/6853sYV/pink-sweater-front-removebg-preview.png",
+        "name": "Sweater",
+        "description": "We use wool for a softer feel and a higher stitch count for durability. Comes standard with a men's unisex fit, that's made to fit everyone.",
+        "price": 59.99,
+        "quantity": 45
+    },
+    {
+        "id": 4,
+        "img": "https://i.ibb.co/mNPXHrc/stack-men-shirt-1-removebg-preview.png",
+        "name": "Men's Shirt",
+        "description": "The traditional style and signature corduroy details offer unmatched durability, while the relaxed fit and brushed cotton flannel provide ultimate comfort.",
+        "price": 35.99,
+        "quantity": 45
+    },
+    {
+        "id": 5,
+        "img": "https://i.ibb.co/0BxNSSr/pexels-pixabay-157860-removebg-preview.png",
+        "name": "Wedding Dress",
+        "description": "This beautiful dress is designed in mermaid style. Customized colors and sizes are also available. Perfect Long Party Evening Dress for the coming event.",
+        "price": 95.99,
+        "quantity": 45
+    },
+    {
+        "id": 6,
+        "img": "https://i.ibb.co/nMjQRZ1/pexels-mart-production-7679463-removebg-preview.png",
+        "name": "Women's Top",
+        "description": "Our women's product is Ultra-soft, quick-dry, moisture-wicking knit fabric with a gentle stretch. Its comfortable to ware and looking good anywhere.",
+        "price": 16.99,
+        "quantity": 45
+    },
+    {
+        "id": 7,
+        "img": "https://i.ibb.co/9nMrcvG/pexels-karolina-grabowska-4210866-removebg-preview.png",
+        "name": "Men's Jeans",
+        "description": " Made with durable and comfortable flex denim for added ease of movement, these versatile jeans are made to last through everyday wear.",
+        "price": 37.99,
+        "quantity": 45
+    },
+    {
+        "id": 8,
+        "img": "https://i.ibb.co/6HfFX84/benjamin-rascoe-Nxtxmm-Hc2-OE-unsplash-removebg-preview-1.png",
+        "name": "Men's Suit",
+        "description": "The ultimate high performance fabric with four way stretch that maximizes movement and comfort, and easy to wear in any climate. This suit can be worn all year round.",
+        "price": 99.99,
+        "quantity": 45
+    },
+    {
+        "id": 9,
+        "img": "https://i.ibb.co/9vb7D3d/saree-g8a53f5172-640-removebg-preview.png",
+        "name": "Women's Sari",
+        "description": "Saree is one of the most elegant and sophisticated outfits a woman can wear. It highlights the contours of your body in a pleasing aesthetic way.",
+        "price": 15,
+        "quantity": 45
+    }
+]

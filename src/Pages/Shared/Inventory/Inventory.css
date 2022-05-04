@@ -1,0 +1,27 @@
+.inventory {
+    background-color: #EAEFF2;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+}
+
+.product {
+    background-color: #fff;
+    border-radius: 5px;
+    max-width: 350px;
+    width: 100%;
+    height: 530px;
+    box-sizing: border-box;
+}
+
+.product img {
+    background-color: #EAF0F0;
+    max-width: 320px;
+    width: 100%;
+    height: 250px;
+    margin: 20px 15px;
+    box-sizing: border-box;
+}
