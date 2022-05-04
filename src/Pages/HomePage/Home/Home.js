@@ -4,6 +4,7 @@ import Banner from '../Banner/Banner';
 import NewArrivals from '../NewArrivals/NewArrivals';
 import Style from '../Style/Style';
 import Subscribe from '../Subscribe/Subscribe';
+import BestSupply from './BestSupply/BestSupply';
 
 const Home = () => {
     return (
@@ -11,6 +12,7 @@ const Home = () => {
             <Banner></Banner>
             <Inventory></Inventory>
             <NewArrivals></NewArrivals>
+            <BestSupply></BestSupply>
             <Style></Style>
             <Subscribe></Subscribe>
         </div>
