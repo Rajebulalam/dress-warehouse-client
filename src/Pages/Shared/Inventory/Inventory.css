@@ -17,11 +17,47 @@
     box-sizing: border-box;
 }
 
+.product:hover {
+    box-shadow: 3px 3px 15px gray;
+}
+
 .product img {
     background-color: #EAF0F0;
-    max-width: 320px;
-    width: 100%;
+    max-width: 340px;
+    width: 96%;
     height: 250px;
-    margin: 20px 15px;
+    margin: 10px 2%;
     box-sizing: border-box;
+}
+
+/* -------------------
+Responsive Banner Part
+--------------------*/
+@media only screen and (min-width: 200px) and (max-width: 991px) {
+
+    .products {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 30px;
+    }
+
+    .product {
+        height: auto;
+    }
+
+}
+
+@media only screen and (min-width: 200px) and (max-width: 540px) {
+
+    .products {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 30px;
+    }
+
+    .product {
+        height: auto;
+        margin: 0 auto;
+    }
+
 }
