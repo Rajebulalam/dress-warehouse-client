@@ -18,3 +18,16 @@ a {
 a:hover {
     color: #005;
 }
+
+/* -------------------
+Responsive Register Part
+--------------------*/
+@media only screen and (min-width: 200px) and (max-width: 300px) {
+
+    .forget-pass {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+}

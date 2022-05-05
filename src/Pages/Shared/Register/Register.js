@@ -10,7 +10,7 @@ const Register = () => {
     return (
         <div className='py-5 register'>
             <Container>
-                <form className='form p-5 shadow'>
+                <form className='form shadow'>
                     <h2 className='text-center fw-bold'>Create Account</h2>
                     <div>
                         <input className='mb-3 p-2 rounded' type="text" name="name" id="name" placeholder='Name' />

@@ -11,7 +11,7 @@ const Login = () => {
     return (
         <div className='py-5 register'>
             <Container>
-                <form className='form p-5 shadow'>
+                <form className='form shadow'>
                     <h2 className='text-center fw-bold'>Login</h2>
                     <div>
                         <input className='mb-3 p-2 rounded' type="email" name="email" id="email" placeholder='Email' />
