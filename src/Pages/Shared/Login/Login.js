@@ -17,7 +17,7 @@ const Login = () => {
                         <input className='mb-3 p-2 rounded' type="email" name="email" id="email" placeholder='Email' />
                         <input className='mb-3 p-2 rounded' type="password" name="password" id="password" placeholder='Password' />
                         <div className='w-100 btn p-0'>
-                            <button className='rounded signUp-btn w-100' type="submit">Login</button>
+                            <button className='rounded login-btn w-100' type="submit">Login</button>
                         </div>
                         <div className='forget-pass pt-4'>
                             <p><Link to='/register'>Create Account?</Link></p>

@@ -58,6 +58,7 @@ label {
 
 .login-btn {
     border: 2px solid #fe5454;
+    padding: 13px 38px;
     background-color: #fff;
     font-weight: bold;
 }

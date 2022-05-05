@@ -1,5 +1,20 @@
-.forget-pass{
+.forget-pass {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.forget-pass a {
+    text-decoration: none;
+}
+
+.forget-pass p,
+a {
+    font-weight: 600;
+    color: #fe5454;
+}
+
+.forget-pass p:hover,
+a:hover {
+    color: #005;
 }
