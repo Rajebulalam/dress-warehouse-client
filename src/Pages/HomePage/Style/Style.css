@@ -1,21 +1,70 @@
-.style{
+.style {
     background-color: #E0F4FF;
 }
-.stylish{
+
+.stylish {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 30px;
+    position: relative;
 }
-.details{
+
+.stylish img {
+    max-width: 500px;
+    width: 100%;
+}
+
+.details {
     display: flex;
     align-items: center;
-
 }
-.details button{
+
+.details div {
+    width: 100%;
+}
+
+.details div input {
+    width: 55%;
+    border: none;
+}
+
+.details button {
     background-color: black;
     color: #FFF;
+    width: 35%;
+    font-size: 14px;
+    font-weight: 600;
 }
-.details button:hover{
+
+.details button:hover {
     background-color: #005;
     color: #FFF;
+}
+
+/* -------------------
+Responsive Stylist Part
+--------------------*/
+@media only screen and (min-width: 200px) and (max-width: 767px) {
+
+    .child-left img {
+        z-index: 10;
+        width: 500px;
+        height: 350px;
+    }
+
+    .details {
+        margin-top: 35px;
+        position: absolute;
+        z-index: 90;
+        background-color: #FFF;
+        opacity: 0.8;
+        max-width: 500px;
+        width: 96%;
+        padding: 2%;
+    }
+
+    .details div input {
+        border: 1px solid #000;
+    }
+
 }
