@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
-        <Navbar className='py-3' bg="dark" variant="dark" expand="lg">
+        <Navbar className='py-2' bg="dark" variant="dark" expand="lg">
             <Container>
                 <Navbar.Brand className='fw-bold fs-3' as={Link} to='/'> <span className='fs-1 text-warning'>D</span>ress <span className='fs-1 text-warning'>W</span>arehouse</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />

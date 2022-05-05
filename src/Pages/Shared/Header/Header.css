@@ -1,12 +1,15 @@
 .menu-item a {
     font-size: 20px;
 }
-.menu-item a.register{
+
+.menu-item a.register {
     margin: 0 10px;
 }
-.login{
+
+.login {
     margin-left: 10px;
 }
+
 .menu-item .register,
 .menu-item .login {
     background-color: #FFC10A;
@@ -19,15 +22,16 @@
 }
 
 
-/* -----------------
-Responsive Header
-------------------*/
+/* -------------------
+Responsive Header Part
+--------------------*/
 @media only screen and (min-width: 200px) and (max-width: 991px) {
-	
-	.menu-item a.register{
+
+    .menu-item a.register {
         margin: 20px 0;
     }
-    .login{
+
+    .login {
         margin-left: 0;
     }
 }
