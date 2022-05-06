@@ -43,19 +43,19 @@ const Login = () => {
     }
 
     // Submit Form
-    const handleSubmit = event => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
         if (!/^(?=^.{8,}$)(?=.*[0-9])(?=.+[a-z])(?=.*[A-Z])(?=.*[!@#$%^&amp;*()_+}{&quot;:;&gt;.&lt;;,]).{1,}$/.test(password)) {
             setErr('Password should contain at lest 1 uppercase, 1 lowercase, 1 number, 1 special character and minimum 8 digit!');
             return;
         } else {
-            signInWithEmailAndPassword(email, password);
+            await signInWithEmailAndPassword(email, password);
             event.target.reset();
         }
     }
 
     // Google Sign In Method
-    const [signInWithGoogle, user2, loading2, error2] = useSignInWithGoogle(auth);
+    const [signInWithGoogle] = useSignInWithGoogle(auth);
     const googleSignIn = async () => {
         await signInWithGoogle(email);
     }

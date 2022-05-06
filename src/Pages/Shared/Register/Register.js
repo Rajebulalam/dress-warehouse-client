@@ -7,6 +7,7 @@ import facebookIcon from '../../../images/facebook.png';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuthState, useCreateUserWithEmailAndPassword, useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
+import { async } from '@firebase/util';
 
 const Register = () => {
 
@@ -24,7 +25,7 @@ const Register = () => {
         user1,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
     // To Get User from Firebase
     const [user] = useAuthState(auth);
@@ -49,6 +50,7 @@ const Register = () => {
             return;
         } else {
             await createUserWithEmailAndPassword(email, password);
+            alert('Sent Verification Email');
             event.target.reset();
         }
     }
@@ -64,8 +66,9 @@ const Register = () => {
 
     // If user has than you can use Protected Route
     useEffect(() => {
-        if (user) {
+        if (user?.emailVerified === true) {
             navigate('/home');
+            console.log(user);
         }
     }, [user]);
 
