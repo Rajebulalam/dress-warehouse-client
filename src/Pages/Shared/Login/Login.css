@@ -19,6 +19,10 @@ a:hover {
     color: #005;
 }
 
+.cursor {
+    cursor: pointer;
+}
+
 /* -------------------
 Responsive Register Part
 --------------------*/

@@ -5,7 +5,7 @@ import googleIcon from '../../../images/google.png';
 import githubIcon from '../../../images/github.png';
 import facebookIcon from '../../../images/facebook.png';
 import { Link, useNavigate } from 'react-router-dom';
-import { useAuthState, useSignInWithEmailAndPassword, useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useAuthState, useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 
 
@@ -63,6 +63,19 @@ const Login = () => {
     // Sign in With Github
     const [signInWithGithub] = useSignInWithGithub(auth);
 
+    // Reset Password With Email
+    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(
+        auth
+    );
+    const passwordReset = async () => {
+        if (email) {
+            await sendPasswordResetEmail(email);
+            alert('Email Send');
+        } else {
+            alert('Put An Email Please!');
+        }
+    }
+
     // If user has than you can use Protected Route
     useEffect(() => {
         if (user) {
@@ -82,13 +95,14 @@ const Login = () => {
                             <p> {loading && 'Loading ...'} </p>
                             <p> {err} </p>
                             <p className='text-danger'> {error?.message && "Password Does't Match"} </p>
+                            <p> {sending?.message && 'Sending Email ....'} </p>
                         </div>
                         <div className='w-100 btn p-0'>
                             <button className='rounded login-btn w-100' type="submit">Login</button>
                         </div>
                         <div className='forget-pass pt-4'>
                             <p><Link to='/register'>Create Account?</Link></p>
-                            <p>Forget Password?</p>
+                            <p className='cursor' onClick={passwordReset}>Forget Password?</p>
                         </div>
                         <div className='or pt-2'>
                             <span></span>
