@@ -5,7 +5,7 @@ import googleIcon from '../../../images/google.png';
 import githubIcon from '../../../images/github.png';
 import facebookIcon from '../../../images/facebook.png';
 import { Link, useNavigate } from 'react-router-dom';
-import { useAuthState, useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useAuthState, useCreateUserWithEmailAndPassword, useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 
 const Register = () => {
@@ -54,10 +54,13 @@ const Register = () => {
     }
 
     // Google Sign In Method
-    const [signInWithGoogle, user2, loading2, error2] = useSignInWithGoogle(auth);
+    const [signInWithGoogle] = useSignInWithGoogle(auth);
     const googleSignIn = async () => {
         await signInWithGoogle(email);
     }
+
+    // Sign in With Github
+    const [signInWithGithub] = useSignInWithGithub(auth);
 
     // If user has than you can use Protected Route
     useEffect(() => {
@@ -96,7 +99,7 @@ const Register = () => {
                         </div>
                         <div className='social-icon'>
                             <button onClick={googleSignIn}><img src={googleIcon} alt="google-icon" /></button>
-                            <button><img src={githubIcon} alt="github-icon" /></button>
+                            <button onClick={() => signInWithGithub()}><img src={githubIcon} alt="github-icon" /></button>
                             <button><img src={facebookIcon} alt="facebook-icon" /></button>
                         </div>
                     </div>
