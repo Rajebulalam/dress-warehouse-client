@@ -5,7 +5,7 @@ import googleIcon from '../../../images/google.png';
 import githubIcon from '../../../images/github.png';
 import facebookIcon from '../../../images/facebook.png';
 import { Link, useNavigate } from 'react-router-dom';
-import { useAuthState, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useAuthState, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 
 
@@ -54,13 +54,18 @@ const Login = () => {
         }
     }
 
-    // If user has than you can use Protected Route
+    // Google Sign In Method
+    const [signInWithGoogle, user2, loading2, error2] = useSignInWithGoogle(auth);
+    const googleSignIn = async () => {
+        await signInWithGoogle(email);
+    }
 
+    // If user has than you can use Protected Route
     useEffect(() => {
         if (user) {
             navigate('/home');
         }
-    }, [user1]);
+    }, [user]);
 
     return (
         <div className='py-5 register'>
@@ -88,7 +93,7 @@ const Login = () => {
                             <span></span>
                         </div>
                         <div className='social-icon'>
-                            <button><img src={googleIcon} alt="google-icon" /></button>
+                            <button onClick={googleSignIn}><img src={googleIcon} alt="google-icon" /></button>
                             <button><img src={githubIcon} alt="github-icon" /></button>
                             <button><img src={facebookIcon} alt="facebook-icon" /></button>
                         </div>

@@ -5,7 +5,7 @@ import googleIcon from '../../../images/google.png';
 import githubIcon from '../../../images/github.png';
 import facebookIcon from '../../../images/facebook.png';
 import { Link, useNavigate } from 'react-router-dom';
-import { useAuthState, useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useAuthState, useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 
 const Register = () => {
@@ -42,24 +42,29 @@ const Register = () => {
     }
 
     // Submit Form
-    const handleSubmit = event => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
         if (!/^(?=^.{8,}$)(?=.*[0-9])(?=.+[a-z])(?=.*[A-Z])(?=.*[!@#$%^&amp;*()_+}{&quot;:;&gt;.&lt;;,]).{1,}$/.test(password)) {
             setErr('Password should contain at lest 1 uppercase, 1 lowercase, 1 number, 1 special character and minimum 8 digit!');
             return;
         } else {
-            createUserWithEmailAndPassword(email, password);
+            await createUserWithEmailAndPassword(email, password);
             event.target.reset();
         }
     }
 
-    // If user has than you can use Protected Route
+    // Google Sign In Method
+    const [signInWithGoogle, user2, loading2, error2] = useSignInWithGoogle(auth);
+    const googleSignIn = async () => {
+        await signInWithGoogle(email);
+    }
 
+    // If user has than you can use Protected Route
     useEffect(() => {
         if (user) {
             navigate('/home');
         }
-    }, [user1]);
+    }, [user]);
 
 
     return (
@@ -90,7 +95,7 @@ const Register = () => {
                             <span></span>
                         </div>
                         <div className='social-icon'>
-                            <button><img src={googleIcon} alt="google-icon" /></button>
+                            <button onClick={googleSignIn}><img src={googleIcon} alt="google-icon" /></button>
                             <button><img src={githubIcon} alt="github-icon" /></button>
                             <button><img src={facebookIcon} alt="facebook-icon" /></button>
                         </div>
