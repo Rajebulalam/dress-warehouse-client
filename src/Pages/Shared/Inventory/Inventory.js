@@ -14,13 +14,17 @@ const Inventory = () => {
                 <div className='products'>
                     {
                         products.slice(0, 6).map(product =>
-                            <div className='product' key={product.id}>
+                            <div className='product' key={product._id}>
                                 <img src={product.img} alt="product-img" />
                                 <div className='px-3'>
                                     <h2> {product.name} </h2>
                                     <p> {product.description} </p>
-                                    <h4> Price : $ {product.price} </h4>
+                                    <h3 className='fs-5'>Supplier : {product.supplier} </h3>
+                                    <h5> Price : $ {product.price} </h5>
                                     <h5> Quantity : {product.quantity} </h5>
+                                    <div className='py-3 d-flex align-items-center justify-content-center'>
+                                        <button className='update-button px-5 py-2 fw-bolder' type="submit">Update</button>
+                                    </div>
                                 </div>
                             </div>
                         )
