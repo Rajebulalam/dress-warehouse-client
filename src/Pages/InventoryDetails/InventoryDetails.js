@@ -20,8 +20,8 @@ const InventoryDetails = () => {
             })
     }, [id]);
 
-    // Update Quantity
-    const handleDeliveredBtn = async () => {
+    // Reduce Quantity
+    const handleDeliveredBtn = () => {
         const quantity = productQuantity - 1;
         const newQuantity = { quantity };
         const url = `http://localhost:5000/product/${id}`;
@@ -39,6 +39,30 @@ const InventoryDetails = () => {
             })
     }
 
+    // Taken Input Value
+    const [increase, setIncrease] = useState(0);
+    const handleNumber = event => {
+        setIncrease(event.target.value);
+    }
+
+    // Increase Quantity
+    const handleIncrease = (e) => {
+        const quantity = parseInt(productQuantity) + parseInt(increase);
+        const newQuantity = { quantity };
+        const url = `http://localhost:5000/product/${id}`;
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newQuantity)
+        })
+            .then(res => res.json())
+            .then(data => {
+                alert('Increase Update');
+                setProductQuantity(data?.quantity || quantity);
+            })
+    }
 
     return (
         <div className='py-5'>
@@ -58,8 +82,8 @@ const InventoryDetails = () => {
                     </div>
                     <div>
                         <button onClick={handleDeliveredBtn} className='w-100' type='btn'>Delivered</button>
-                        <input className='my-2' type="number" name="number" id="number" />
-                        <button className='w-100' type="btn">Restock</button>
+                        <input onBlur={handleNumber} className='my-2' type="number" name="number" id="number" />
+                        <button onClick={handleIncrease} className='w-100' type="btn">Restock</button>
                     </div>
                 </div>
             </Container >

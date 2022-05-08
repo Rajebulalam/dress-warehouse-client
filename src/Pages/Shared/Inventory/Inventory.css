@@ -30,17 +30,39 @@
     box-sizing: border-box;
 }
 
-.update-button{
+.update-button {
     background-color: #FFC107;
     border-radius: 25px;
     border: none;
 }
-.update-button:hover{
+
+.update-button:hover {
     background-color: #ffd207f5;
 }
-.update-button a{
+
+.update-button a {
     text-decoration: none;
     color: #000;
+}
+
+.manage-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.manage-btn button{
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    background-color: #000;
+    color: #fff;
+}
+.manage-btn button:hover{
+    background-color: #FFC107;
+}
+.manage-btn button a{
+    color: #fff;
+    text-decoration: none;
 }
 /* -------------------
 Responsive Banner Part
