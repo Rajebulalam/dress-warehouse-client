@@ -1,0 +1,21 @@
+.add-form {
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.add-form input {
+    width: 100%;
+    padding: 10px;
+}
+
+.addItem-btn button {
+    background-color: #000;
+    color: #fff;
+    font-weight: bold;
+}
+
+.addItem-btn button:hover {
+    background-color: #ffd207f5;
+    color: #000;
+}

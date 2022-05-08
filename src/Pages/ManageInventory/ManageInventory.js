@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import UseInventory from '../../Hooks/UseInventory';
 import './ManageInventory.css';
 
@@ -50,6 +51,9 @@ const ManageInventory = () => {
                             </div>
                         )
                     }
+                </div>
+                <div className='manage-btn pt-5 m-0'>
+                    <button type='button'><Link to='/manageInventory'>Add New Item</Link></button>
                 </div>
             </Container>
         </div>
