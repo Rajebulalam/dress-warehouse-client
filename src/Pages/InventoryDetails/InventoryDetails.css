@@ -25,19 +25,25 @@
 .details div:last-child {
     width: 20%;
     text-align: center;
+    box-sizing: border-box;
 }
 
 .details button {
-    background-color: #fff;
-    color: #000;
-    border: 2px solid red;
-    border-radius: 10px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 5px;
     padding: 10px 10px;
     font-size: 16px;
     font-weight: bold;
+    border: none;
 }
 
 .details button:hover {
     background-color: #FFC107;
     color: #000;
+}
+
+.details input {
+    max-width: 650px;
+    width: 100%;
 }
