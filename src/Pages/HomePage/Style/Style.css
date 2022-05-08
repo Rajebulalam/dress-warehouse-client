@@ -14,21 +14,21 @@
     width: 100%;
 }
 
-.details {
+.detail {
     display: flex;
     align-items: center;
 }
 
-.details div {
+.detail div {
     width: 100%;
 }
 
-.details div input {
+.detail div input {
     width: 55%;
     border: none;
 }
 
-.details button {
+.detail button {
     background-color: black;
     color: #FFF;
     width: 35%;
@@ -36,7 +36,7 @@
     font-weight: 600;
 }
 
-.details button:hover {
+.detail button:hover {
     background-color: #005;
     color: #FFF;
 }
@@ -52,7 +52,7 @@ Responsive Stylist Part
         height: 350px;
     }
 
-    .details {
+    .detail {
         margin-top: 35px;
         position: absolute;
         z-index: 90;
@@ -63,7 +63,7 @@ Responsive Stylist Part
         padding: 2%;
     }
 
-    .details div input {
+    .detail div input {
         border: 1px solid #000;
     }
 

@@ -9,7 +9,7 @@ const Style = () => {
                 <div className='w-100 child-left'>
                     <img src="https://i.ibb.co/5KLMSNv/style-removebg-preview.png" alt="style-img" />
                 </div>
-                <div className='w-100 details'>
+                <div className='w-100 detail'>
                     <div>
                         <p><small className='fw-bold text-warning pt-3'>ASK A STYLIST</small></p>
                         <h2 className='fs-1 fw-bold'>Great Look With Our Stylist Product</h2>

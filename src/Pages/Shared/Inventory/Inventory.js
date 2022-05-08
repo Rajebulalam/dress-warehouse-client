@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import UseInventory from '../../../Hooks/UseInventory';
 import './Inventory.css';
 
@@ -23,7 +24,7 @@ const Inventory = () => {
                                     <h5> Price : $ {product.price} </h5>
                                     <h5> Quantity : {product.quantity} </h5>
                                     <div className='py-3 d-flex align-items-center justify-content-center'>
-                                        <button className='update-button px-5 py-2 fw-bolder' type="submit">Update</button>
+                                        <button className='update-button px-5 py-2 fw-bolder' type="submit"><Link to={`inventory/${product._id}`}>Update</Link></button>
                                     </div>
                                 </div>
                             </div>

@@ -4,7 +4,7 @@ import { Container } from 'react-bootstrap';
 import googleIcon from '../../../images/google.png';
 import githubIcon from '../../../images/github.png';
 import facebookIcon from '../../../images/facebook.png';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuthState, useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 
@@ -16,19 +16,18 @@ const Login = () => {
     const [password, setPassword] = useState('');
     const [err, setErr] = useState('');
 
-    // Navigate
-    const navigate = useNavigate();
-
     // React Firebase Hooks
     const [
         signInWithEmailAndPassword,
-        user1,
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
     // To Get User from Firebase
     const [user] = useAuthState(auth);
+
+    // Navigate
+    const navigate = useNavigate();
 
     // Get Input Value
     const handleEmail = event => {
@@ -54,6 +53,17 @@ const Login = () => {
         }
     }
 
+    // Location
+    const location = useLocation();
+    let from = location.state?.from?.pathname || "/";
+
+    // If user has than you can use Protected Route
+    useEffect(() => {
+        if (user) {
+            navigate(from, { replace: true });
+        }
+    }, [user]);
+
     // Google Sign In Method
     const [signInWithGoogle] = useSignInWithGoogle(auth);
     const googleSignIn = async () => {
@@ -75,13 +85,6 @@ const Login = () => {
             alert('Put An Email Please!');
         }
     }
-
-    // If user has than you can use Protected Route
-    useEffect(() => {
-        if (user) {
-            navigate('/home');
-        }
-    }, [user]);
 
     return (
         <div className='py-5 register'>
