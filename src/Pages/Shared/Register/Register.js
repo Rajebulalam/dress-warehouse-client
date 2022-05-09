@@ -8,6 +8,7 @@ import Spinner from '../Spinner/Spinner';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuthState, useCreateUserWithEmailAndPassword, useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
+import { toast } from 'react-toastify';
 
 const Register = () => {
 
@@ -22,7 +23,6 @@ const Register = () => {
     // React Firebase Hooks
     const [
         createUserWithEmailAndPassword,
-        user1,
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
@@ -34,12 +34,10 @@ const Register = () => {
     const handleEmail = event => {
         const email = event.target.value;
         setEmail(email);
-        console.log(email);
     }
     const handlePassword = event => {
         const password = event.target.value;
         setPassword(password);
-        console.log(password);
     }
 
     // Submit Form
@@ -50,7 +48,7 @@ const Register = () => {
             return;
         } else {
             await createUserWithEmailAndPassword(email, password);
-            alert('Sent Verification Email');
+            // toast('Sent Verification Email');
             event.target.reset();
         }
     }
@@ -68,10 +66,9 @@ const Register = () => {
     useEffect(() => {
         if (user) {
             navigate('/home');
-            console.log(user);
+            toast('Register Success full');
         }
     }, [user]);
-
 
     return (
         <div className='py-5 register'>

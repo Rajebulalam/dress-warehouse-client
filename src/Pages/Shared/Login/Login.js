@@ -8,6 +8,7 @@ import Spinner from '../Spinner/Spinner';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuthState, useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
+import { toast } from 'react-toastify';
 
 
 const Login = () => {
@@ -34,12 +35,10 @@ const Login = () => {
     const handleEmail = event => {
         const email = event.target.value;
         setEmail(email);
-        console.log(email);
     }
     const handlePassword = event => {
         const password = event.target.value;
         setPassword(password);
-        console.log(password);
     }
 
     // Submit Form
@@ -50,6 +49,7 @@ const Login = () => {
             return;
         } else {
             await signInWithEmailAndPassword(email, password);
+            toast('Login Success full');
             event.target.reset();
         }
     }
@@ -81,9 +81,9 @@ const Login = () => {
     const passwordReset = async () => {
         if (email) {
             await sendPasswordResetEmail(email);
-            alert('Email Send');
+            toast('Email Send');
         } else {
-            alert('Put An Email Please!');
+            toast('Put An Email Please!');
         }
     }
 
