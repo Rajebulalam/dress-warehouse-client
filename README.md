@@ -1,5 +1,5 @@
-# Getting Started with Create React App
+# Getting Started with Our Dress Warehouse App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project live site link [Dress Warehouse](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Project Information
