@@ -47,3 +47,48 @@
     max-width: 650px;
     width: 100%;
 }
+
+/* -----------------------------
+Responsive Inventory Route Part
+-------------------------------*/
+@media only screen and (min-width: 200px) and (max-width: 991px) {
+
+    .product-details {
+        flex-direction: column;
+    }
+
+    .details {
+        padding: 30px 0;
+    }
+
+    .details div:first-child {
+        width: 60%;
+    }
+
+    .details div:last-child {
+        width: 40%;
+    }
+
+
+}
+
+@media only screen and (min-width: 200px) and (max-width: 667px) {
+
+    .product-details {
+        border: none;
+    }
+
+    .details {
+        flex-direction: column;
+    }
+
+    .details div:first-child {
+        width: 100%;
+        padding-bottom: 30px;
+    }
+
+    .details div:last-child {
+        width: 100%;
+    }
+
+}
