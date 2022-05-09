@@ -4,6 +4,7 @@ import './Register.css';
 import googleIcon from '../../../images/google.png';
 import githubIcon from '../../../images/github.png';
 import facebookIcon from '../../../images/facebook.png';
+import Spinner from '../Spinner/Spinner';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuthState, useCreateUserWithEmailAndPassword, useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
@@ -87,7 +88,7 @@ const Register = () => {
                         </div>
                         <div>
                             <p className='text-danger'> {err} </p>
-                            <p> {loading && 'Loading...'} </p>
+                            <p> {loading && <Spinner></Spinner>} </p>
                             <p className='text-danger'> {error?.message && 'Already have an account using this Email!'} </p>
                         </div>
                         <div className='w-100 btn'>

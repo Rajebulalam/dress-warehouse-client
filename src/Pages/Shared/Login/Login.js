@@ -4,6 +4,7 @@ import { Container } from 'react-bootstrap';
 import googleIcon from '../../../images/google.png';
 import githubIcon from '../../../images/github.png';
 import facebookIcon from '../../../images/facebook.png';
+import Spinner from '../Spinner/Spinner';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuthState, useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
@@ -95,7 +96,7 @@ const Login = () => {
                         <input onBlur={handleEmail} className='mb-3 p-2 rounded' type="email" name="email" id="email" placeholder='Email' />
                         <input onBlur={handlePassword} className='mb-3 p-2 rounded' type="password" name="password" id="password" placeholder='Password' />
                         <div>
-                            <p> {loading && 'Loading ...'} </p>
+                            <p> {loading && <Spinner></Spinner>} </p>
                             <p> {err} </p>
                             <p className='text-danger'> {error?.message && "Password Does't Match"} </p>
                             <p> {sending?.message && 'Sending Email ....'} </p>
