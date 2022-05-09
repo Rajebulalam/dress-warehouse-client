@@ -23,8 +23,9 @@ const Header = () => {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto menu-item">
                         <Nav.Link className='text-white mx-2' as={Link} to='/home'>Home</Nav.Link>
-                        <Nav.Link className='text-white mx-2' as={Link} to='/manageInventory'>Manage Inventory</Nav.Link>
-                        <Nav.Link className='text-white mx-2' as={Link} to='/addNewItem'>Add Inventory</Nav.Link>
+                        <Nav.Link className='text-white mx-2' as={Link} to='/manageInventory'>Manage Items</Nav.Link>
+                        <Nav.Link className='text-white mx-2' as={Link} to='/addNewItem'>Add Items</Nav.Link>
+                        <Nav.Link className='text-white mx-2' as={Link} to='/myItem'>My Items</Nav.Link>
                         <Nav.Link className='register text-dark px-3 btn' as={Link} to='/register' >Register</Nav.Link>
                         {
                             user ? <Nav.Link onClick={logOut} className='login text-dark px-4 btn' as={Link} to='/login'>Log Out</Nav.Link> : <Nav.Link className='login text-dark px-4 btn' as={Link} to='/login'>Login</Nav.Link>

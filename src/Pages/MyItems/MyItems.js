@@ -1,13 +1,24 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import UseInventory from '../../Hooks/UseInventory';
-import './ManageInventory.css';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
+import './MyItems.css';
 
-const ManageInventory = () => {
+const MyItems = () => {
 
-    // Get Product by Hooks
-    const [products, setProducts] = UseInventory();
+    const [user] = useAuthState(auth);
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        const getOrders = async () => {
+            const email = user.email;
+            const url = `http://localhost:5000/items?email=${email}`;
+            const { data } = await axios.get(url);
+            setProducts(data);
+        }
+        getOrders();
+    }, [user.email]);
 
     // Delete Product
     const handleDelete = id => {
@@ -20,7 +31,6 @@ const ManageInventory = () => {
                 .then(res => res.json())
                 .then(data => {
                     if (data.deletedCount > 0) {
-                        console.log('delete');
                         const remaining = products.filter(product => product._id !== id);
                         setProducts(remaining);
                     }
@@ -33,7 +43,7 @@ const ManageInventory = () => {
     return (
         <div className='py-5'>
             <Container>
-                <h2 className='text-center fw-bold pb-4'>Manage Items</h2>
+                <h2 className='text-center pb-4 fw-bold'>My Items</h2>
                 <div className='products'>
                     {
                         products.map(product =>
@@ -54,11 +64,11 @@ const ManageInventory = () => {
                     }
                 </div>
                 <div className='manage-btn pt-5 m-0'>
-                    <button type='button'><Link to='/addNewItem'>Add New Item</Link></button>
+                    <button type='button'>Delete</button>
                 </div>
             </Container>
         </div>
     );
 };
 
-export default ManageInventory;
+export default MyItems;
