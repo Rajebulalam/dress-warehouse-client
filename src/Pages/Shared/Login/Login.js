@@ -5,6 +5,7 @@ import googleIcon from '../../../images/google.png';
 import githubIcon from '../../../images/github.png';
 import facebookIcon from '../../../images/facebook.png';
 import Spinner from '../Spinner/Spinner';
+import axios from 'axios';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuthState, useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
@@ -41,6 +42,10 @@ const Login = () => {
         setPassword(password);
     }
 
+    // Location
+    const location = useLocation();
+    let from = location.state?.from?.pathname || "/";
+
     // Submit Form
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -49,19 +54,20 @@ const Login = () => {
             return;
         } else {
             await signInWithEmailAndPassword(email, password);
+            const { data } = await axios.post('http://localhost:5000/login', { email });
+            console.log(data);
+            localStorage.setItem('accessToken', data.accessToken);
+            navigate(from, { replace: true });
             toast('Login Success full');
             event.target.reset();
         }
     }
 
-    // Location
-    const location = useLocation();
-    let from = location.state?.from?.pathname || "/";
 
     // If user has than you can use Protected Route
     useEffect(() => {
         if (user) {
-            navigate(from, { replace: true });
+            // navigate(from, { replace: true });
         }
     }, [user]);
 

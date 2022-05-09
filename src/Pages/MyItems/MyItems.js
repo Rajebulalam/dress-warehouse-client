@@ -1,19 +1,26 @@
 import axios from 'axios';
+import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 
 const MyItems = () => {
 
     const [user] = useAuthState(auth);
     const [products, setProducts] = useState([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const getOrders = async () => {
             const email = user.email;
             const url = `http://localhost:5000/items?email=${email}`;
-            const { data } = await axios.get(url);
+            const { data } = await axios.get(url, {
+                headers: {
+                    authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                }
+            });
             setProducts(data);
         }
         getOrders();
