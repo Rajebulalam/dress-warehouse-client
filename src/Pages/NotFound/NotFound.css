@@ -1,0 +1,21 @@
+.notFound h1 {
+    font-size: 4rem;
+    font-weight: 900;
+}
+
+.notFound p {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.notFound a {
+    text-decoration: none;
+    background-color: #FFC10A;
+    color: #000;
+    display: inline-block;
+}
+
+.notFound a:hover {
+    background-color: #000;
+    color: #fff;
+}
