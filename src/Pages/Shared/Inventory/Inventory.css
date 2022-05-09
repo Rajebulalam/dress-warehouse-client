@@ -45,25 +45,29 @@
     color: #000;
 }
 
-.manage-btn{
+.manage-btn {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.manage-btn button{
+
+.manage-btn button {
     border: none;
     border-radius: 25px;
     padding: 10px 20px;
     background-color: #000;
     color: #fff;
 }
-.manage-btn button:hover{
+
+.manage-btn button:hover {
     background-color: #FFC107;
 }
-.manage-btn button a{
+
+.manage-btn button a {
     color: #fff;
     text-decoration: none;
 }
+
 /* -------------------
 Responsive Banner Part
 --------------------*/
