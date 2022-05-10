@@ -11,7 +11,7 @@ const InventoryDetails = () => {
 
     // Load from Server by Id
     useEffect(() => {
-        const url = `http://localhost:5000/product/${id}`
+        const url = `https://sleepy-falls-35762.herokuapp.com/product/${id}`
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -24,7 +24,7 @@ const InventoryDetails = () => {
     const handleDeliveredBtn = () => {
         const quantity = productQuantity - 1;
         const newQuantity = { quantity };
-        const url = `http://localhost:5000/product/${id}`;
+        const url = `https://sleepy-falls-35762.herokuapp.com/product/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -49,7 +49,7 @@ const InventoryDetails = () => {
     const handleIncrease = (e) => {
         const quantity = parseInt(productQuantity) + parseInt(increase);
         const newQuantity = { quantity };
-        const url = `http://localhost:5000/product/${id}`;
+        const url = `https://sleepy-falls-35762.herokuapp.com/product/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {

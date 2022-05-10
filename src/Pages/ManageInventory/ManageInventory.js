@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import UseInventory from '../../Hooks/UseInventory';
 
@@ -12,7 +13,7 @@ const ManageInventory = () => {
     const handleDelete = id => {
         const proceed = window.confirm('You want to delete!');
         if (proceed) {
-            const url = `http://localhost:5000/product/${id}`;
+            const url = `https://sleepy-falls-35762.herokuapp.com/product/${id}`;
             fetch(url, {
                 method: 'DELETE',
             })
@@ -31,6 +32,9 @@ const ManageInventory = () => {
 
     return (
         <div className='py-5'>
+            <Helmet>
+                <title>Dress Warehouse - Manage Items</title>
+            </Helmet>
             <Container>
                 <h2 className='text-center fw-bold pb-4'>Manage Items</h2>
                 <div className='products'>

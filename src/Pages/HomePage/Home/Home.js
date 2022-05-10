@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import Inventory from '../../Shared/Inventory/Inventory';
 import Banner from '../Banner/Banner';
 import NewArrivals from '../NewArrivals/NewArrivals';
@@ -9,6 +10,11 @@ import BestSupply from './BestSupply/BestSupply';
 const Home = () => {
     return (
         <div>
+            <div>
+                <Helmet>
+                    |<title> Dress Warehouse </title>
+                </Helmet>
+            </div>
             <Banner></Banner>
             <Inventory></Inventory>
             <NewArrivals></NewArrivals>

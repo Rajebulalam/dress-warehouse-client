@@ -9,6 +9,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAuthState, useCreateUserWithEmailAndPassword, useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import { toast } from 'react-toastify';
+import { Helmet } from 'react-helmet-async';
 
 const Register = () => {
 
@@ -72,6 +73,9 @@ const Register = () => {
 
     return (
         <div className='py-5 register'>
+            <Helmet>
+                <title>Dress Warehouse - Register</title>
+            </Helmet>
             <Container>
                 <form onSubmit={handleSubmit} className='form shadow'>
                     <h2 className='text-center fw-bold'>Create Account</h2>

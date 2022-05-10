@@ -1,9 +1,13 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
+import { Helmet } from 'react-helmet-async';
 
 const Blogs = () => {
     return (
         <div className='py-5'>
+            <Helmet>
+                <title>Dress Warehouse - Blogs</title>
+            </Helmet>
             <Container>
                 <div className='border p-3 mb-3'>
                     <h4>What is the difference between javascript and nodejs?</h4>

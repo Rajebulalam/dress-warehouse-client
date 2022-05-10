@@ -13,7 +13,7 @@ const Banner = () => {
                                 <div>
                                     <h2>Exception for Everyone with Unique Style</h2>
                                     <p>Dress Sense makes man perfect</p>
-                                    <button className='btn text-white'>Buy Now</button>
+                                    <button className='btn'>Buy Now</button>
                                 </div>
                             </div>
                             <div className='w-100 child-right'>
@@ -31,7 +31,7 @@ const Banner = () => {
                                 <div>
                                     <h2>Experience The Brilliance of a Real Gem</h2>
                                     <p>Fashion is a man soul</p>
-                                    <button className='btn text-white'>Buy Now</button>
+                                    <button className='btn'>Buy Now</button>
                                 </div>
                             </div>
                             <div className='w-100 child-right'>
@@ -49,7 +49,7 @@ const Banner = () => {
                                 <div>
                                     <h2>Choice is your's!</h2>
                                     <p>Product is Our's</p>
-                                    <button className='btn text-white'>Order Now</button>
+                                    <button className='btn'>Order Now</button>
                                 </div>
                             </div>
                             <div className='w-100 child-right'>

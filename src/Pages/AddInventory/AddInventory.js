@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
+import { Helmet } from 'react-helmet-async';
 import './AddInventory.css';
 
 const AddInventory = () => {
@@ -25,7 +26,7 @@ const AddInventory = () => {
         };
 
         // Send Data to Server
-        fetch('http://localhost:5000/product', {
+        fetch('https://sleepy-falls-35762.herokuapp.com/product', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -41,6 +42,9 @@ const AddInventory = () => {
     }
     return (
         <div className='py-5'>
+            <Helmet>
+                <title>Dress Warehouse - Add Items</title>
+            </Helmet>
             <Container>
                 <h2 className='text-center fw-bold pb-4'>Add Inventory Product</h2>
                 <form onSubmit={handleSubmit} className='add-form'>

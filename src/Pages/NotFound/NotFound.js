@@ -1,11 +1,15 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import './NotFound.css';
 
 const NotFound = () => {
     return (
         <div>
+            <Helmet>
+                <title>Dress Warehouse - Not Found</title>
+            </Helmet>
             <Container className='py-5 notFound text-center'>
                 <h1>Opps!</h1>
                 <h2 className='text-danger fs-1 fw-bold py-1'>404</h2>

@@ -10,6 +10,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuthState, useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import { toast } from 'react-toastify';
+import { Helmet } from 'react-helmet-async';
 
 
 const Login = () => {
@@ -54,7 +55,7 @@ const Login = () => {
             return;
         } else {
             await signInWithEmailAndPassword(email, password);
-            const { data } = await axios.post('http://localhost:5000/login', { email });
+            const { data } = await axios.post('https://sleepy-falls-35762.herokuapp.com/login', { email });
             console.log(data);
             localStorage.setItem('accessToken', data.accessToken);
             navigate(from, { replace: true });
@@ -95,6 +96,9 @@ const Login = () => {
 
     return (
         <div className='py-5 register'>
+            <Helmet>
+                <title>Dress Warehouse - Login</title>
+            </Helmet>
             <Container>
                 <form onSubmit={handleSubmit} className='form shadow'>
                     <h2 className='text-center fw-bold'>Login</h2>
