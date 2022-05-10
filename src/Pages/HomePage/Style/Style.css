@@ -46,9 +46,23 @@ Responsive Stylist Part
 --------------------*/
 @media only screen and (min-width: 200px) and (max-width: 767px) {
 
-    .child-left img {
+
+    .stylish .style-left {
+        max-width: 500px;
+        width: 100%;
+        text-align: center;
         z-index: 10;
-        width: 500px;
+        height: 350px;
+        padding: 0 5%;
+        margin: 0 20px;
+        display: flex;
+        align-items: center;
+    }
+
+    .stylish .style-left img {
+        min-width: 300px;
+        width: 100%;
+        z-index: 10;
         height: 350px;
     }
 

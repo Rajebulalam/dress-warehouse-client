@@ -6,7 +6,7 @@ const Style = () => {
     return (
         <div className='style'>
             <Container className='stylish'>
-                <div className='w-100 child-left'>
+                <div className='w-100 style-left'>
                     <img src="https://i.ibb.co/5KLMSNv/style-removebg-preview.png" alt="style-img" />
                 </div>
                 <div className='w-100 detail'>
