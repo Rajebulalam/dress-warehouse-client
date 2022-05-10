@@ -49,7 +49,7 @@ const Register = () => {
             return;
         } else {
             await createUserWithEmailAndPassword(email, password);
-            // toast('Sent Verification Email');
+            toast('Sent Verification Email');
             event.target.reset();
         }
     }
@@ -65,7 +65,7 @@ const Register = () => {
 
     // If user has than you can use Protected Route
     useEffect(() => {
-        if (user) {
+        if (user?.emailVerified === true) {
             navigate('/home');
             toast('Register Success full');
         }
@@ -89,7 +89,7 @@ const Register = () => {
                         </div>
                         <div>
                             <p className='text-danger'> {err} </p>
-                            <p> {loading && <Spinner></Spinner>} </p>
+                            <p> {loading && 'Loading ...'} </p>
                             <p className='text-danger'> {error?.message && 'Already have an account using this Email!'} </p>
                         </div>
                         <div className='w-100 btn'>

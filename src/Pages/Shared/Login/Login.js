@@ -106,7 +106,7 @@ const Login = () => {
                         <input onBlur={handleEmail} className='mb-3 p-2 rounded' type="email" name="email" id="email" placeholder='Email' />
                         <input onBlur={handlePassword} className='mb-3 p-2 rounded' type="password" name="password" id="password" placeholder='Password' />
                         <div>
-                            <p> {loading && <Spinner></Spinner>} </p>
+                            <p> {loading && 'Loading ...'} </p>
                             <p> {err} </p>
                             <p className='text-danger'> {error?.message && "Password Does't Match"} </p>
                             <p> {sending?.message && 'Sending Email ....'} </p>
