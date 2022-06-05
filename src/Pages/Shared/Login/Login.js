@@ -56,14 +56,12 @@ const Login = () => {
         } else {
             await signInWithEmailAndPassword(email, password);
             const { data } = await axios.post('https://sleepy-falls-35762.herokuapp.com/login', { email });
-            console.log(data);
             localStorage.setItem('accessToken', data.accessToken);
             navigate(from, { replace: true });
             toast('Login Success full');
             event.target.reset();
         }
     }
-
 
     // If user has than you can use Protected Route
     useEffect(() => {
